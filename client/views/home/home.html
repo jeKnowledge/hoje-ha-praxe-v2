@@ -1,3 +1,48 @@
 <template name="home">
-  <p>Home</p>
+    {{#if Template.subscriptionsReady}}
+        {{#if isTherePraxe.state}}
+            <img class="background-img" id="background_desk" src="assets/background_gold_desk.png">
+            <img class="background-img" id="background_tablet" src="assets/background_gold_tablet.png">
+            <img class="background-img" id="background_phone" src="assets/background_gold_phone.png">
+        {{else}}
+            <img class="background-img" id="background_desk" src="../assets/background_green_desk.png">
+            <img class="background-img" id="background_tablet" src="../assets/background_green_tablet.png">
+            <img class="background-img" id="background_phone" src="../assets/background_green_phone.png">
+        {{/if}}
+
+        <div>
+            <h2 id="date">{{day}} {{month}}</h2>
+
+            <h1 id="verdict">
+                {{#if isTherePraxe.state}}
+                    <span class="highlight_gold">Sim,</span><br>hoje pode<br>haver praxe.
+                {{else}}
+                    <span class="highlight_gold">Não,</span><br>hoje não pode<br>haver praxe.
+                {{/if}}
+            </h1>
+        </div>
+
+        <div>
+          <span class="fade">
+            {{#unless isTherePraxe.state}}
+                <p class="reason">{{reason}}</p>
+            {{/unless}}
+
+              <p>{{notification}}</p>
+
+            <p id="logos">
+                <a href="http://mcv.aac.uc.pt/">
+                    <img id="cv-logo" src="../assets/cv_logo.png"/>
+                </a>
+
+                <a href="http://jeknowledge.pt/">
+                    <img id="jk-logo" src="../assets/jk_logo.png"/>
+                </a>
+            </p>
+      </span>
+        </div>
+
+    {{else}}
+        <p>Loading</p>
+    {{/if}}
 </template>
