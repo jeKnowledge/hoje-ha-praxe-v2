@@ -20,12 +20,7 @@ Template.adminMenu.events({
     var notification = $('#praxe-notification').val();
     var reason = $('#praxe-reason').val();
 
-    var id = Praxe.findOne()._id;
-    Praxe.update({ _id: id}, {
-      $set: { state: state,
-        notification: notification, 
-        reason: reason }
-    })
+    Meteor.call('updatePraxe', state, notification, reason);
 
     return false;
   }
