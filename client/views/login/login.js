@@ -1,5 +1,5 @@
 Template.loginForm.events({
-  'submit #login-form' : function(e, t) {
+  'submit #login-form': function(e, t) {
     e.preventDefault();
 
     var email = $('#login-email').val();

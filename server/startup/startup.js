@@ -2,4 +2,12 @@ Meteor.startup(function () {
   if (Meteor.users.find().fetch().length == 0) {
     Accounts.createUser({email: 'admin@praxeuc.com', password: 'password123'})
   }
+
+  if (Praxe.find().fetch().length == 0) {
+    Praxe.insert({
+      state: true,
+      notification: 'Notificação oficial do conselho de vetaranos da Universisdade de Coimbra.',
+      reason: ''
+    })
+  }
 });

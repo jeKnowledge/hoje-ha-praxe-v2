@@ -1,9 +1,8 @@
 <template name="admin">
-
   {{ #if currentUser }}
     {{ > logoutForm }}
+    {{ > adminMenu }}
   {{ else }}
     {{ > loginForm }}
   {{ /if }}
-
 </template>
