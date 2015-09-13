@@ -1,8 +1,11 @@
 <template name="adminMenu">
-  <form id="praxe-form" action="action">
-    <input type="checkbox" id="praxe-state">
-    <textarea id="praxe-notification" placeholder="Notification" rows="5"></textarea>
-    <textarea id="praxe-reason" placeholder="Reason" rows="5"></textarea>
-    <input type="submit" id="praxe-reason" value="Update"> 
-  </form>
+    <form id="praxe-form" action="action">
+        <p><label>Praxe (há ou não praxe)<input type="checkbox" id="praxe-state"></label></p>
+
+        <p><p>Motivo (só aparece quando não há praxe):</p><textarea id="praxe-reason" placeholder="Motivo" rows="5"></textarea></p>
+
+        <p><p>Notificação (aparece sempre):</p><textarea id="praxe-notification" placeholder="Notificação" rows="5"></textarea></p>
+
+        <p><input type="submit" id="praxe-reason" value="Atualizar"></p>
+    </form>
 </template>
