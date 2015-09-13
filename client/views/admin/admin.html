@@ -1,0 +1,9 @@
+<template name="admin">
+
+  {{ #if currentUser }}
+    {{ > logoutForm }}
+  {{ else }}
+    {{ > loginForm }}
+  {{ /if }}
+
+</template>
